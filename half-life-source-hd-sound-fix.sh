@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 ##
 ## Copyright (C) 2016 João Ricardo Lourenço <jorl17.8@gmail.com>
 ##
@@ -43,7 +43,7 @@ FIXED_MODELS_URL="https://www.dropbox.com/s/k5ziho54lhtv0xr/hl1-source-hd-models
 # Change these variables if needed. Note that we currently do not provide a VPK linux32 binary.
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    STEAMAPPS=~/.steam/steam/SteamApps/    
+    STEAMAPPS=~/.steam/steam/steamapps/    
     VPK_FOLDER="$STEAMAPPS/common/Half-Life 2/bin"
     VPK_BINARY="vpk_linux32"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
