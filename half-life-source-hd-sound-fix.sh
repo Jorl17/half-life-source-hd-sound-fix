@@ -59,7 +59,8 @@ HL1_HD_FOLDER="$HL2_FOLDER/hl1_hd"
 echo "[SCRIPT] Extracting hl1_hd_pak_dir.vpk..."
 cd "$HL1_HD_FOLDER"
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$VPK_FOLDER" "$VPK_FOLDER"/"$VPK_BINARY" ./hl1_hd_pak_dir.vpk
+    #using unvpk from https://bitbucket.org/panzi/unvpk as suggested by vmarkovtsev
+    unvpk hl1_hd_pak_dir.vpk
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"$VPK_FOLDER" "$VPK_FOLDER"/"$VPK_BINARY" ./hl1_hd_pak_dir.vpk
 fi
